@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Toyota_united</string>
+
+    <string name="user">User ID:</string>
+    <string name="username">User Name:</string>
+    <string name="pass">Password</string>
+    <string name="login">Login</string>
+    <string name="companyid">Branch:</string>
+
+</resources>

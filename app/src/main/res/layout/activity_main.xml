@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="volunteersofttech.arsa.toyata_united.MainActivity"
+    android:background="@drawable/bg_toyota1">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/my_margin_top"
+        android:padding="20dp"
+        android:background="#c8ffffff"
+        android:weightSum="1">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/icon"
+            android:id="@+id/imageView"
+            android:src="@drawable/logo"
+            android:layout_weight="0.13" />
+
+        <EditText
+            android:layout_width="@dimen/edit"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText"
+            android:hint="@string/user"
+            android:inputType="text"
+            android:layout_marginTop="15dp" />
+
+        <EditText
+            android:layout_width="@dimen/edit"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText2"
+            android:hint="@string/pass"
+            android:inputType="textPassword"
+            android:layout_marginTop="15dp" />
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        android:id="@+id/button"
+        android:layout_alignParentBottom="true"
+        android:background="#ffa600"
+        android:onClick="clickLogin" />
+
+</RelativeLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Toyata_united</string>
+
+    <string name="user">พนักงาน :</string>
+    <string name="pass">Password</string>
+    <string name="login">Login</string>
+
+</resources>
+

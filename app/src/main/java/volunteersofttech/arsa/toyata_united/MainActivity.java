@@ -109,10 +109,7 @@ public class MainActivity extends AppCompatActivity {
                 try {
 
                     JSONObject jsonObject = new JSONObject(strJSON);
-
                     result = jsonObject.getBoolean("result");
-
-
                     Log.d("20MayV1", "result ==> " + result);
 
                     checkResult(result);

@@ -8,17 +8,21 @@ import android.widget.TextView;
 public class Main_Menu extends AppCompatActivity {
 
     //ประกาศตัวแปร
-    private TextView useridTextView,usernameTextView;
+    private TextView useridTextView,usernameTextView, branchTextView;
     private String useridString, usernameString;
 
     private ListView menuListView;
 
-    //
+    private String[] resultStrings;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main__menu);
+
+        resultStrings = getIntent().getStringArrayExtra("Result");
 
         //bind widget
         bindwidget();
@@ -60,16 +64,19 @@ public class Main_Menu extends AppCompatActivity {
 //    }//listviewcontroller
 
     private void showview() {
-        //Receive Parameter
-        useridString = getIntent().getStringExtra("user_id");
-        useridTextView.setText(useridString);
-    }
+
+        useridTextView.setText(resultStrings[0]);
+        usernameTextView.setText(resultStrings[1]);
+        branchTextView.setText(resultStrings[3]);
+
+
+    }   // showView
 
     private void bindwidget() {
         useridTextView = (TextView) findViewById(R.id.textView2);
         usernameTextView = (TextView) findViewById(R.id.textView4);
         menuListView = (ListView) findViewById(R.id.listView);
-
+        branchTextView = (TextView) findViewById(R.id.textView10);
 
 
     }//bindwidget

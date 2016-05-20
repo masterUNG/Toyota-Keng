@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="title_me002">
+
+        <item>ใบรับรถ</item>
+
+
+    </string-array>
+
+    <string-array name="detail_me002">
+
+        <item>ใบรับรถ รายละเอียด</item>
+
+
+    </string-array>
+
+</resources>

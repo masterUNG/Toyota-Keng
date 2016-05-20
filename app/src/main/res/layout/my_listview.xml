@@ -2,33 +2,41 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#ffbb00">
-
-    <ImageView
-        android:layout_width="@dimen/icon_menu"
-        android:layout_height="@dimen/icon_menu"
-        android:id="@+id/imageView2"
-        android:layout_margin="10sp" />
+    android:background="#000000"
+    android:paddingBottom="1dp">
 
     <LinearLayout
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:background="#ffffff">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/textView5"
-            android:textSize="@dimen/h1_menu"
-            android:layout_marginTop="10dp" />
+        <ImageView
+            android:layout_width="@dimen/icon_menu"
+            android:layout_height="@dimen/icon_menu"
+            android:id="@+id/imageView2"
+            android:layout_margin="10sp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/textView6"
-            android:textSize="@dimen/h2_menu"
-            android:layout_marginTop="5dp" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/textView5"
+                android:textSize="@dimen/h1_menu"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/textView6"
+                android:textSize="@dimen/h2_menu"
+                android:layout_marginTop="5dp" />
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

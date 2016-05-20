@@ -8,8 +8,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import volunteersofttech.arsa.toyata_united.R;
-
 /**
  * Created by ACER on 3/21/2016.
  */
@@ -51,8 +49,10 @@ public class menu_adapter extends BaseAdapter {
 
         ImageView iconImageView = (ImageView) view1.findViewById(R.id.imageView2);
         iconImageView.setImageResource(iconInts[position]);
+
         TextView titleTextView = (TextView) view1.findViewById(R.id.textView5);
         titleTextView.setText(titlesStrings[position]);
+
         TextView detailTextView = (TextView) view1.findViewById(R.id.textView6);
         detailTextView.setText(detailStrings[position]);
 

@@ -89,9 +89,9 @@
         </LinearLayout>
 
         <ListView
-            android:layout_width="wrap_content"
-            android:layout_height="415dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/listView"
-            android:layout_marginTop="10dp" />
+            android:layout_margin="15dp" />
     </LinearLayout>
 </RelativeLayout>

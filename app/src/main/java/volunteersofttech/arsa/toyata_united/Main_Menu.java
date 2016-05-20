@@ -13,7 +13,8 @@ public class Main_Menu extends AppCompatActivity {
 
     private ListView menuListView;
 
-    private String[] resultStrings;
+    private String[] resultStrings, titleStrings, detailStrings;
+    private int[] iconInts;
 
 
 
@@ -31,37 +32,38 @@ public class Main_Menu extends AppCompatActivity {
         showview();
 
         //listview controller
-        //listviewcontroller();  //Error อยู่
+        listviewcontroller();  //Error อยู่
 
 
     }//main on create
 
-//    private void listviewcontroller() {
-//        final int[] iconInts = new int[3];
-//        iconInts[0] = R.drawable.menu1;
-//        iconInts[1] = R.drawable.menu2;
-//        iconInts[3] = R.drawable.menu2;
-//        final String[] titleStrings = new String[3];
-//        titleStrings[0] = "menu1";
-//        titleStrings[1] = "menu2";
-//        titleStrings[2] = "menu3";
-//        final String[] detailStrings = new String[3];
-//        titleStrings[0] = "menu1";
-//        titleStrings[1] = "menu2";
-//        titleStrings[2] = "menu3";
-//
-//        menu_adapter valmenu_adapter = new menu_adapter(Main_Menu.this, iconInts, titleStrings, detailStrings);
-//        menuListView.setAdapter(valmenu_adapter);
-//
-//        menuListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                //สำหรับเรียก form ต่อ
-//                //Intent intent = new Intent(Main_Menu.this,)
-//            }
-//        });
-//
-//    }//listviewcontroller
+    private void listviewcontroller() {
+
+        if (resultStrings[4].equals("ME001")) {
+            //ME001
+            iconInts = new int[2];
+            iconInts[0] = R.drawable.build1;
+            iconInts[1] = R.drawable.build2;
+
+            titleStrings = getResources().getStringArray(R.array.title_me001);
+            detailStrings = getResources().getStringArray(R.array.detail_me001);
+
+        } else if (resultStrings[4].equals("ME002")) {
+            //ME002
+            iconInts = new int[1];
+            iconInts[0] = R.drawable.build1;
+
+            titleStrings = getResources().getStringArray(R.array.title_me002);
+            detailStrings = getResources().getStringArray(R.array.detail_me002);
+
+        } // if
+
+        menu_adapter menu_adapter = new menu_adapter(Main_Menu.this,
+                iconInts, titleStrings, detailStrings);
+        menuListView.setAdapter(menu_adapter);
+
+    }   // ListView
+
 
     private void showview() {
 

@@ -1,5 +1,6 @@
 package volunteersofttech.arsa.toyata_united;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private String userString, passwordString;
     private boolean result;
     private String messageString;
+    private String[] resultStrings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,6 +117,19 @@ public class MainActivity extends AppCompatActivity {
 
                     Log.d("20MayV1", "result ==> " + result);
 
+                    try {
+
+                        resultStrings = new String[5];
+                        resultStrings[0] = jsonObject.getString("userid");
+                        resultStrings[1] = jsonObject.getString("Username");
+                        resultStrings[2] = jsonObject.getString("Login_company");
+                        resultStrings[3] = jsonObject.getString("companyname");
+                        resultStrings[4] = jsonObject.getString("menu_no");
+
+                    } catch (Exception e) {
+                        Log.d("20MayV2", "Error จาก Authen False ==> " + e.toString());
+                    }
+
                     checkResult(result, messageString);
 
                 } catch (Exception e) {
@@ -127,6 +142,15 @@ public class MainActivity extends AppCompatActivity {
             private void checkResult(boolean result, final String messageString) {
                 if (result) {
                     //Authen Pass
+                    for (int i=0;i<5;i++) {
+                        Log.d("20MayV2", "result " + i + " = " + resultStrings[i]);
+                    }
+
+                    Intent intent = new Intent(MainActivity.this, Main_Menu.class);
+                    intent.putExtra("Result", resultStrings);
+                    startActivity(intent);
+                    finish();
+
                 } else {
                     //Authen False
                     Log.d("20MayV1", "Authen False");

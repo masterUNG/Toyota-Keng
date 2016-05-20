@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText userEdittext, passwordEdittext;
     private String userString, passwordString;
     private boolean result;
+    private String messageString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,9 +111,11 @@ public class MainActivity extends AppCompatActivity {
 
                     JSONObject jsonObject = new JSONObject(strJSON);
                     result = jsonObject.getBoolean("result");
+                    messageString = jsonObject.getString("message");
+
                     Log.d("20MayV1", "result ==> " + result);
 
-                    checkResult(result);
+                    checkResult(result, messageString);
 
                 } catch (Exception e) {
                     Log.d("20MayV1", "my Error ==> " + e.toString());
@@ -121,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
 
-            private void checkResult(boolean result) {
+            private void checkResult(boolean result, final String messageString) {
                 if (result) {
                     //Authen Pass
                 } else {
@@ -131,7 +134,12 @@ public class MainActivity extends AppCompatActivity {
                     new Handler(Looper.getMainLooper()).post(new Runnable() {
                         @Override
                         public void run() {
-                            Toast.makeText(MainActivity.this, "Authentication False", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(MainActivity.this, "Authentication False", Toast.LENGTH_SHORT).show();
+
+                            MyAlert myAlert = new MyAlert();
+                            myAlert.myDialog(MainActivity.this, "Authen False",
+                                    messageString);
+
                         }
                     });
 

@@ -7,4 +7,9 @@
     <string name="login">Login</string>
     <string name="companyid">Branch:</string>
 
+    <string name="title_receive">ใบรับรถ</string>
+    <string name="no_receive">เลขที่ใบส่งสินค้า</string>
+    <string name="date_receive">วันที่ใบส่งสินค้า</string>
+
+
 </resources>

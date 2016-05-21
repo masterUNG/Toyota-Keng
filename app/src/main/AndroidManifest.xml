@@ -23,7 +23,8 @@
         </activity>
         <activity android:name=".Main_Menu" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".ReceiveCar"></activity>
+        <activity android:name=".ReceiveCar" />
+        <activity android:name=".ReadBarCode"></activity>
     </application>
 
 </manifest>

@@ -1,6 +1,7 @@
 package volunteersofttech.arsa.toyata_united;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -74,10 +75,16 @@ public class ReceiveCar extends AppCompatActivity {
     }   // clickCalendar
 
     public void clickBarcodeVin(View view) {
+        Intent intent = new Intent(ReceiveCar.this, ReadBarCode.class);
+        intent.putExtra("Barcode", "Vin");
+        startActivity(intent);
 
     }
 
     public void clickBarcodeKaludi(View view) {
+        Intent intent = new Intent(ReceiveCar.this, ReadBarCode.class);
+        intent.putExtra("Barcode", "Kaludi");
+        startActivity(intent);
 
     }
 

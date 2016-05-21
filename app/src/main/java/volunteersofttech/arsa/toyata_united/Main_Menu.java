@@ -1,7 +1,10 @@
 package volunteersofttech.arsa.toyata_united;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -62,7 +65,48 @@ public class Main_Menu extends AppCompatActivity {
                 iconInts, titleStrings, detailStrings);
         menuListView.setAdapter(menu_adapter);
 
+        //Active When Click ListView
+        menuListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                setUpIntent(i);
+
+            }   // onItemClick
+        });
+
+
     }   // ListView
+
+    private void setUpIntent(int intPosition) {
+
+        if (resultStrings[4].equals("ME001")) {
+            //ME001
+            switch (intPosition) {
+                case 0:
+                    //สำหรับรับรถ
+                    Intent intent = new Intent(Main_Menu.this, ReceiveCar.class);
+                    intent.putExtra("Result", resultStrings);
+                    startActivity(intent);
+                    break;
+                case 1:
+                    //สำหรับตรวจรถ
+                    break;
+                default:
+                    break;
+            }   // switch
+        } else if (resultStrings[4].equals("ME002")) {
+            switch (intPosition) {
+                case 0:
+                    Intent intent = new Intent(Main_Menu.this, ReceiveCar.class);
+                    //intent.putExtra("")
+                    break;
+                default:
+                    break;
+            }   // switch
+        }   // if
+
+    }   // setUpIntent
 
 
     private void showview() {

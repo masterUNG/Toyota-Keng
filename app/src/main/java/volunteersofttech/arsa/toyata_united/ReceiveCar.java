@@ -77,14 +77,18 @@ public class ReceiveCar extends AppCompatActivity {
     public void clickBarcodeVin(View view) {
         Intent intent = new Intent(ReceiveCar.this, ReadBarCode.class);
         intent.putExtra("Barcode", "Vin");
+        intent.putExtra("Result", getIntent().getStringArrayExtra("Result"));
         startActivity(intent);
+        finish();
 
     }
 
     public void clickBarcodeKaludi(View view) {
         Intent intent = new Intent(ReceiveCar.this, ReadBarCode.class);
         intent.putExtra("Barcode", "Kaludi");
+        intent.putExtra("Result", getIntent().getStringArrayExtra("Result"));
         startActivity(intent);
+        finish();
 
     }
 

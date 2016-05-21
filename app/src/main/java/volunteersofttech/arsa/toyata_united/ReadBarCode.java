@@ -63,6 +63,14 @@ public class ReadBarCode extends Activity {
 
                 Toast toast = Toast.makeText(this, "Content:" + contents + " Format:" + format, Toast.LENGTH_LONG);
                 toast.show();
+
+                Intent intent1 = new Intent(ReadBarCode.this, ReceiveCar.class);
+                intent1.putExtra("Result", getIntent().getStringArrayExtra("Result"));
+                intent1.putExtra("Barcode", getIntent().getStringExtra("Barcode"));
+                intent1.putExtra("StringBarcode", contents);
+                startActivity(intent1);
+                finish();
+
             }
         }
     }

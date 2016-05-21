@@ -29,7 +29,7 @@ public class ReadBarCode extends Activity {
         } catch (ActivityNotFoundException anfe) {
             showDialog(ReadBarCode.this, "No Scanner Found", "Download a scanner code activity?", "Yes", "No").show();
         }
-    }
+    }   //scanBar
 
 
 
@@ -53,7 +53,7 @@ public class ReadBarCode extends Activity {
             }
         });
         return downloadDialog.show();
-    }
+    }   // showDwalog
 
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
         if (requestCode == 0) {
@@ -64,14 +64,16 @@ public class ReadBarCode extends Activity {
                 Toast toast = Toast.makeText(this, "Content:" + contents + " Format:" + format, Toast.LENGTH_LONG);
                 toast.show();
 
-                Intent intent1 = new Intent(ReadBarCode.this, ReceiveCar.class);
-                intent1.putExtra("Result", getIntent().getStringArrayExtra("Result"));
-                intent1.putExtra("Barcode", getIntent().getStringExtra("Barcode"));
-                intent1.putExtra("StringBarcode", contents);
-                startActivity(intent1);
-                finish();
+//                Intent intent1 = new Intent(ReadBarCode.this, ReceiveCar.class);
+//                intent1.putExtra("Result", getIntent().getStringArrayExtra("Result"));
+//                intent1.putExtra("Barcode", getIntent().getStringExtra("Barcode"));
+//                intent1.putExtra("StringBarcode", contents);
+//                startActivity(intent1);
+//                finish();
 
             }
         }
-    }
-}
+    }   // onActivityResult
+
+
+}   // Main Class
